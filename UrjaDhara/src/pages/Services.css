@@ -1,0 +1,49 @@
+.services-hero {
+  min-height: 45vh; position: relative; display: flex; align-items: center;
+  background: url('https://images.unsplash.com/photo-1497440001374-f26997328c1b?w=1600&q=80') center/cover no-repeat;
+  padding-top: 80px;
+}
+.services-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(10,40,10,0.88), rgba(0,60,80,0.82));
+}
+.services-hero-content { position: relative; z-index: 1; text-align: center; max-width: 700px; margin: 0 auto; }
+.services-hero-content h1 { font-size: 2.8rem; color: white; font-weight: 800; margin-bottom: 14px; }
+.services-hero-content p { color: rgba(255,255,255,0.85); font-size: 1.05rem; }
+
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.service-card { position: relative; overflow: hidden; }
+.service-icon {
+  width: 60px; height: 60px; border-radius: 16px; font-size: 1.8rem;
+  display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
+}
+.service-card h3 { font-size: 1.1rem; color: #1a4d1a; font-weight: 700; margin-bottom: 10px; }
+.service-card p { font-size: 0.9rem; color: #555; line-height: 1.6; }
+.service-line {
+  position: absolute; bottom: 0; left: 0; height: 4px; width: 0;
+  transition: width 0.4s ease;
+}
+.service-card:hover .service-line { width: 100%; }
+
+.data-section { background: #f0f7f0; }
+.data-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+.process-section { background: white; }
+.process-steps { display: flex; flex-direction: column; gap: 24px; max-width: 800px; margin: 0 auto; }
+.process-step {
+  display: flex; gap: 24px; align-items: flex-start;
+  padding: 24px; background: #f8fdf8; border-radius: 16px;
+  border-left: 4px solid #2d7a2d; transition: transform 0.3s, box-shadow 0.3s;
+}
+.process-step:hover { transform: translateX(6px); box-shadow: 0 4px 20px rgba(45,122,45,0.15); }
+.step-num {
+  font-size: 2rem; font-weight: 800; color: #2d7a2d;
+  min-width: 60px; line-height: 1;
+}
+.step-content h3 { font-size: 1.1rem; color: #1a4d1a; font-weight: 700; margin-bottom: 8px; }
+.step-content p { font-size: 0.9rem; color: #555; line-height: 1.6; }
+
+@media (max-width: 768px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .data-grid { grid-template-columns: 1fr; }
+}

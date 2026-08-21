@@ -1,0 +1,21 @@
+.data-card {
+  border-radius: 16px; overflow: hidden; margin-top: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.data-card-header {
+  display: flex; align-items: center; gap: 12px;
+  padding: 18px 24px;
+}
+.solar-header { background: linear-gradient(135deg, #f9a825, #ff8f00); color: white; }
+.water-header { background: linear-gradient(135deg, #0288d1, #00897b); color: white; }
+.data-icon { font-size: 2rem; }
+.data-card-header h3 { font-size: 1.3rem; font-weight: 700; color: white; }
+.data-points { list-style: none; padding: 20px 24px; display: flex; flex-direction: column; gap: 12px; }
+.data-point {
+  padding: 12px 16px; border-radius: 10px; font-size: 0.92rem; line-height: 1.5;
+  background: #f8f9fa; border-left: 4px solid #4caf50;
+  transition: transform 0.2s, background 0.2s;
+}
+.solar-card .data-point { border-left-color: #f9a825; }
+.water-card .data-point { border-left-color: #0288d1; }
+.data-point:hover { transform: translateX(4px); background: #e8f5e9; }

@@ -1,0 +1,31 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; background: #f0f7f0; color: #1a2e1a; }
+:root {
+  --green: #2d7a2d;
+  --green-dark: #1a4d1a;
+  --green-light: #4caf50;
+  --teal: #00897b;
+  --teal-light: #4db6ac;
+  --yellow: #f9a825;
+  --yellow-light: #ffd54f;
+  --bg: #f0f7f0;
+  --white: #ffffff;
+  --card-bg: #ffffff;
+  --shadow: 0 4px 20px rgba(45,122,45,0.12);
+  --shadow-hover: 0 8px 32px rgba(45,122,45,0.25);
+}
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; font-family: 'Poppins', sans-serif; }
+input, textarea { font-family: 'Poppins', sans-serif; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 80px 0; }
+.section-title { font-size: 2.2rem; font-weight: 700; color: var(--green-dark); text-align: center; margin-bottom: 16px; }
+.section-subtitle { text-align: center; color: #555; font-size: 1.05rem; margin-bottom: 50px; }
+.card { background: var(--card-bg); border-radius: 16px; padding: 28px; box-shadow: var(--shadow); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
+.btn { padding: 12px 28px; border-radius: 30px; border: none; font-size: 1rem; font-weight: 600; transition: all 0.3s ease; }
+.btn-primary { background: linear-gradient(135deg, var(--green), var(--teal)); color: white; }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(45,122,45,0.4); }
+.btn-outline { background: transparent; border: 2px solid var(--white); color: var(--white); }
+.btn-outline:hover { background: var(--white); color: var(--green-dark); }
+.highlight { color: var(--yellow); }

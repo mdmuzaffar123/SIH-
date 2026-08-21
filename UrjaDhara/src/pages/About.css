@@ -1,0 +1,48 @@
+.about-hero {
+  min-height: 50vh; position: relative; display: flex; align-items: center;
+  background: url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1600&q=80') center/cover no-repeat;
+  padding-top: 80px;
+}
+.about-hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(10,40,10,0.85), rgba(0,80,60,0.8));
+}
+.about-hero-content { position: relative; z-index: 1; text-align: center; max-width: 700px; margin: 0 auto; }
+.about-hero-content h1 { font-size: 2.8rem; color: white; font-weight: 800; margin-bottom: 16px; }
+.about-hero-content p { color: rgba(255,255,255,0.85); font-size: 1.05rem; line-height: 1.7; }
+
+.about-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.about-card { text-align: center; }
+.about-card-icon { font-size: 2.5rem; margin-bottom: 14px; }
+.about-card h3 { font-size: 1.2rem; color: #1a4d1a; margin-bottom: 10px; font-weight: 700; }
+.about-card p { color: #555; font-size: 0.92rem; line-height: 1.6; }
+
+.about-story { background: #f0f7f0; }
+.story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+.story-text h2 { font-size: 1.8rem; color: #1a4d1a; margin-bottom: 20px; font-weight: 700; }
+.story-text p { color: #555; line-height: 1.8; margin-bottom: 16px; font-size: 0.95rem; }
+.story-img-box {
+  height: 350px; border-radius: 20px;
+  background: url('https://images.unsplash.com/photo-1548337138-e87d889cc369?w=800&q=80') center/cover;
+  position: relative; overflow: hidden;
+}
+.story-img-overlay {
+  position: absolute; inset: 0; background: rgba(26,77,26,0.6);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  color: white;
+}
+.story-img-overlay span { font-size: 3rem; }
+.story-img-overlay p { font-size: 1.2rem; font-weight: 700; margin-top: 8px; }
+
+.team-section { background: white; }
+.team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.team-card { text-align: center; }
+.team-emoji { font-size: 3rem; margin-bottom: 12px; }
+.team-card h3 { font-size: 1rem; color: #1a4d1a; font-weight: 700; margin-bottom: 6px; }
+.team-card p { font-size: 0.85rem; color: #777; }
+
+@media (max-width: 768px) {
+  .about-cards { grid-template-columns: 1fr; }
+  .story-grid { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+}
