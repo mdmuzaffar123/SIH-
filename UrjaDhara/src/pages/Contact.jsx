@@ -115,7 +115,7 @@ export default function Contact() {
             <div className="quick-contact">
               <a href="tel:+919876543210" className="quick-btn call-btn">📞 Call Now</a>
               <a href="mailto:info@urjadhara.in" className="quick-btn email-btn">✉️ Email Us</a>
-              <a href="https://wa.me/919876543210" target="_blank" rel="noreferrer" className="quick-btn whatsapp-btn">💬 WhatsApp</a>
+              <a href="https://wa.me/7282962922" target="_blank" rel="noreferrer" className="quick-btn whatsapp-btn">💬 WhatsApp</a>
             </div>
 
             {/* FAQ */}
