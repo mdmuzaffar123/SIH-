@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
 import { useAuth } from '../context/AuthContext';
-import SearchModal from './SearchModal';
 import AuthModal from './AuthModal';
 import './Navbar.css';
 import './UserMenu.css';
@@ -25,7 +24,6 @@ export default function Navbar() {
   const { lang, setLang, t } = useLang();
   const { user, logout } = useAuth();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
   const [authOpen, setAuthOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
@@ -65,16 +63,12 @@ export default function Navbar() {
           </div>
 
           <div className="nav-actions">
-            <button className="nav-icon-btn" onClick={() => setSearchOpen(true)} title="Search">
-              🔍
-            </button>
-
             <div className="lang-dropdown" ref={langRef}>
               <button
                 className={`lang-toggle-btn ${langOpen ? 'open' : ''}`}
                 onClick={() => setLangOpen(!langOpen)}
               >
-                🌐 Language <span className="lang-arrow">{langOpen ? '▲' : '▼'}</span>
+                <span className="lang-label">🌐 Language</span><span className="lang-mobile-icon" aria-hidden="true">🌐</span> <span className="lang-arrow">{langOpen ? '▲' : '▼'}</span>
               </button>
               {langOpen && (
                 <div className="lang-menu">
@@ -142,7 +136,6 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {searchOpen && <SearchModal onClose={() => setSearchOpen(false)} />}
       {authOpen && <AuthModal onClose={() => setAuthOpen(false)} />}
     </>
   );

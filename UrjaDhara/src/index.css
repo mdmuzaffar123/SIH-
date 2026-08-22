@@ -1,5 +1,6 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Poppins', sans-serif; background: #f0f7f0; color: #1a2e1a; }
+html, body, #root { min-width: 0; }
+body { font-family: 'Poppins', sans-serif; background: #f0f7f0; color: #1a2e1a; overflow-x: hidden; }
 :root {
   --green: #2d7a2d;
   --green-dark: #1a4d1a;
@@ -29,3 +30,14 @@ input, textarea { font-family: 'Poppins', sans-serif; }
 .btn-outline { background: transparent; border: 2px solid var(--white); color: var(--white); }
 .btn-outline:hover { background: var(--white); color: var(--green-dark); }
 .highlight { color: var(--yellow); }
+@media (max-width: 768px) {
+  .container { padding-left: 16px; padding-right: 16px; }
+  .section { padding: 56px 0; }
+  .section-title { font-size: 1.8rem; line-height: 1.25; }
+  .section-subtitle { font-size: 0.9rem; line-height: 1.5; margin-bottom: 32px; }
+  .card { padding: 22px 18px; }
+}
+@media (max-width: 480px) {
+  .section-title { font-size: 1.55rem; }
+  .section-subtitle { font-size: 0.84rem; }
+}

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useLang } from '../context/LanguageContext';
 import { Link } from 'react-router-dom';
+import SearchModal from '../components/SearchModal';
 import './Home.css';
 
 const PRIORITY_COLOR = { Critical: '#c62828', High: '#e65100', Medium: '#f9a825', Low: '#2d7a2d' };
@@ -115,12 +116,12 @@ function StateModal({ state, stateNames, sm, onClose }) {
 export default function Home() {
   const { t } = useLang();
   const stateNames = t('states.list');
-  const stats = t('stats');
   const features = t('features.list');
   const ft = t('features');
   const sm = t('stateModal');
   const [activeFeature, setActiveFeature] = useState(null);
   const [activeState, setActiveState] = useState(null);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   return (
     <div className="home">
@@ -140,16 +141,16 @@ export default function Home() {
         <div className="hero-scroll">{t('hero.scroll')}</div>
       </section>
 
-      {/* Stats */}
-      <section className="stats-section">
-        <div className="container stats-grid">
-          {(stats || []).map((s, i) => (
-            <div key={i} className="stat-card">
-              <div className="stat-icon">{s.icon}</div>
-              <div className="stat-num">{s.num}</div>
-              <div className="stat-label">{s.label}</div>
-            </div>
-          ))}
+      {/* Search */}
+      <section className="home-search-section">
+        <div className="container home-search-card">
+          <div className="home-search-copy">
+            <span className="home-search-eyebrow">📍 Explore local data</span>
+          </div>
+          <button className="home-search-btn" onClick={() => setSearchOpen(true)}>
+            <span className="home-search-btn-icon" aria-hidden="true">⌕</span>
+            <span>Search your area</span>
+          </button>
         </div>
       </section>
 
@@ -202,6 +203,7 @@ export default function Home() {
 
       {activeFeature && <FeatureModal feature={activeFeature} onClose={() => setActiveFeature(null)} ft={ft} />}
       {activeState && <StateModal state={activeState} stateNames={stateNames} sm={sm} onClose={() => setActiveState(null)} />}
+      {searchOpen && <SearchModal onClose={() => setSearchOpen(false)} />}
     </div>
   );
 }

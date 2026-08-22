@@ -44,6 +44,12 @@
 .step-content p { font-size: 0.9rem; color: #555; line-height: 1.6; }
 
 @media (max-width: 768px) {
+  .services-hero-content h1 { font-size: 2.2rem; }
+  .services-hero-content p { font-size: 0.9rem; line-height: 1.5; }
   .services-grid { grid-template-columns: 1fr; }
   .data-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .services-hero { min-height: 55vh; }
+  .services-hero-content h1 { font-size: 1.9rem; }
 }

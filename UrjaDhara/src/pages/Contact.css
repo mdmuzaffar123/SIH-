@@ -16,7 +16,7 @@
 .contact-hero-content h1 { font-size: 2.8rem; color: white; font-weight: 800; margin-bottom: 12px; }
 .contact-hero-content > p { color: rgba(255,255,255,0.85); font-size: 1rem; margin-bottom: 28px; }
 .hero-stats {
-  display: flex; gap: 32px; justify-content: center;
+  display: flex; gap: 32px; justify-content: center; flex-wrap: wrap;
 }
 .hero-stats div { text-align: center; }
 .hero-stats strong { display: block; font-size: 1.6rem; font-weight: 800; color: #ffd54f; }
@@ -166,7 +166,13 @@
   .contact-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 520px) {
+  .contact-hero { min-height: 58vh; }
+  .contact-hero-content h1 { font-size: 2.15rem; }
+  .contact-hero-content > p { font-size: 0.88rem; line-height: 1.5; }
+  .hero-stats { gap: 14px 24px; }
+  .hero-stats strong { font-size: 1.3rem; }
+  .hero-stats span { font-size: 0.7rem; }
+  .contact-form-box { padding: 22px 16px; }
   .form-row-2 { grid-template-columns: 1fr; }
   .urgency-options { flex-direction: column; }
-  .hero-stats { gap: 20px; }
 }

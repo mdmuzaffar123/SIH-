@@ -275,5 +275,22 @@
 }
 @media (max-width: 768px) {
   .admin-sidebar { display: none; }
+  .admin-topbar { padding: 14px 16px; }
+  .admin-topbar h1 { font-size: 1rem; }
+  .admin-overview, .admin-inquiries, .admin-users, .admin-newsletter { padding: 16px; }
   .adm-stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .adm-chart-box, .adm-recent-box { padding: 16px; }
+  .adm-filters { align-items: stretch; }
+  .adm-search { min-width: 100%; }
+  .adm-filters select { flex: 1; min-width: 0; }
+}
+@media (max-width: 480px) {
+  .adm-stats-grid { grid-template-columns: 1fr; }
+  .admin-topbar { align-items: flex-start; gap: 8px; }
+  .admin-badge-live { font-size: 0.68rem; padding: 4px 8px; }
+  .adm-detail-header { padding: 20px 16px; }
+  .adm-detail-grid { padding: 0 16px; }
+  .adm-detail-message { padding: 14px 16px; }
+  .adm-detail-actions { padding: 14px 16px 18px; }
+  .adm-reply-btn { margin-left: 0; width: 100%; text-align: center; }
 }

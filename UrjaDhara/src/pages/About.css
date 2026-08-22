@@ -42,7 +42,15 @@
 .team-card p { font-size: 0.85rem; color: #777; }
 
 @media (max-width: 768px) {
+  .about-hero-content h1 { font-size: 2.2rem; }
+  .about-hero-content p { font-size: 0.9rem; }
   .about-cards { grid-template-columns: 1fr; }
   .story-grid { grid-template-columns: 1fr; }
   .team-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .about-hero { min-height: 55vh; }
+  .about-hero-content h1 { font-size: 1.9rem; }
+  .team-grid { grid-template-columns: 1fr; }
+  .story-img-box { height: 260px; }
 }
