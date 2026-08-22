@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLang } from '../context/LanguageContext';
 import { Link } from 'react-router-dom';
 import SearchModal from '../components/SearchModal';
+import smartPlanningArtwork from '../../Image/5 card.png';
 import './Home.css';
 
 const PRIORITY_COLOR = { Critical: '#c62828', High: '#e65100', Medium: '#f9a825', Low: '#2d7a2d' };
@@ -17,6 +18,45 @@ const STATE_DATA = [
   { name: 'Maharashtra', solar: '74%', water: '78%', priority: 'Medium', facilities: 5600 },
   { name: 'Gujarat', solar: '80%', water: '82%', priority: 'Low', facilities: 3200 },
   { name: 'Andhra Pradesh', solar: '69%', water: '66%', priority: 'Medium', facilities: 4100 },
+];
+
+const IMPACT_CARDS = [
+  {
+    eyebrow: 'National Mission',
+    title: 'Solar power for every rural classroom',
+    text: 'Supporting India’s clean-energy vision with reliable electricity for schools and health centres.',
+    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Narendra%20Modi%20official%20portrait.jpg',
+    tone: 'gold',
+  },
+  {
+    eyebrow: 'Clean Water Access',
+    title: 'Water where communities need it most',
+    text: 'Solar-powered pumps can bring dependable water closer to rural families every day.',
+    image: 'https://images.unsplash.com/photo-1594708767771-a7502209ff51?w=800&q=85',
+    tone: 'blue',
+  },
+  {
+    eyebrow: 'Policy & Funding',
+    title: 'Turn government schemes into action',
+    text: 'Discover subsidy and funding pathways that help local clean-energy projects move faster.',
+    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Narendra%20Modi%20official%20portrait.jpg',
+    tone: 'green',
+  },
+  {
+    eyebrow: 'Community Impact',
+    title: 'A stronger future for rural India',
+    text: 'Better energy and water systems create healthier, safer, and more resilient communities.',
+    image: 'https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=800&q=85',
+    tone: 'orange',
+  },
+  {
+    eyebrow: 'Smart Planning',
+    // title: 'Plan every project with confidence',
+    // text: 'Use local data to choose the right solar system, water solution, and investment priority.',
+    image: smartPlanningArtwork,
+    tone: 'teal',
+    isArtwork: true,
+  },
 ];
 
 function FeatureModal({ feature, onClose, ft }) {
@@ -122,6 +162,16 @@ export default function Home() {
   const [activeFeature, setActiveFeature] = useState(null);
   const [activeState, setActiveState] = useState(null);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [impactIndex, setImpactIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setImpactIndex(current => (current + 1) % IMPACT_CARDS.length);
+    }, 4500);
+    return () => window.clearInterval(timer);
+  }, []);
+
+  const activeImpactCard = IMPACT_CARDS[impactIndex];
 
   return (
     <div className="home">
@@ -136,6 +186,24 @@ export default function Home() {
           <div className="hero-btns">
             <Link to="/services" className="btn btn-primary">{t('hero.cta')}</Link>
             <Link to="/about" className="btn btn-outline">{t('hero.cta2')}</Link>
+          </div>
+          <div className={`impact-carousel impact-${activeImpactCard.tone} ${activeImpactCard.isArtwork ? 'impact-artwork' : ''}`}>
+            {!activeImpactCard.isArtwork && <div className="impact-card-content">
+              <span className="impact-card-eyebrow">{activeImpactCard.eyebrow}</span>
+              <h2>{activeImpactCard.title}</h2>
+              <p>{activeImpactCard.text}</p>
+            </div>}
+            <img src={activeImpactCard.image} alt="Rural clean energy and water initiative" className="impact-card-image" />
+          </div>
+          <div className="impact-dots" aria-label="Impact highlights">
+            {IMPACT_CARDS.map((card, index) => (
+              <button
+                key={card.title}
+                className={`impact-dot ${index === impactIndex ? 'active' : ''}`}
+                onClick={() => setImpactIndex(index)}
+                aria-label={`Show ${card.title}`}
+              />
+            ))}
           </div>
         </div>
         <div className="hero-scroll">{t('hero.scroll')}</div>
