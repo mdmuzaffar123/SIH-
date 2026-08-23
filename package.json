@@ -1,0 +1,9 @@
+{
+  "name": "climateathon-workspace",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix UrjaDhara run dev --",
+    "build": "npm --prefix UrjaDhara run build",
+    "lint": "npm --prefix UrjaDhara run lint"
+  }
+}

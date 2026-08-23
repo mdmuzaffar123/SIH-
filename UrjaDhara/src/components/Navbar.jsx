@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { useLang } from '../context/LanguageContext';
 import { useAuth } from '../context/AuthContext';
 import AuthModal from './AuthModal';
@@ -57,6 +57,7 @@ export default function Navbar() {
 
           <div className={`nav-links ${menuOpen ? 'open' : ''}`}>
             <Link to="/" onClick={() => setMenuOpen(false)}>{t('nav.home')}</Link>
+            <NavLink to="/gee-insights" className={({ isActive }) => isActive ? 'active' : ''} onClick={() => setMenuOpen(false)}>GEE Insights</NavLink>
             <Link to="/about" onClick={() => setMenuOpen(false)}>{t('nav.about')}</Link>
             <Link to="/services" onClick={() => setMenuOpen(false)}>{t('nav.services')}</Link>
             <Link to="/contact" onClick={() => setMenuOpen(false)}>{t('nav.contact')}</Link>

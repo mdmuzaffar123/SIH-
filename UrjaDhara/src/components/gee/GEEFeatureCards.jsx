@@ -1,0 +1,4 @@
+import { Activity, Droplets, Leaf, Map, Sun } from 'lucide-react';
+import { featureCards } from '../../data/geeMockData';
+const icons = { map: Map, sun: Sun, droplets: Droplets, activity: Activity, leaf: Leaf };
+export default function GEEFeatureCards() { return <section className="gee-section gee-container"><div className="gee-heading"><div><div className="gee-section-kicker">ONE INTELLIGENCE LAYER, MANY ANSWERS</div><h2>What You Will Get From GEE Insights</h2></div><p>Turn complex earth observation data into clear signals for infrastructure planning.</p></div><div className="gee-feature-grid">{featureCards.map((card) => { const Icon = icons[card.icon]; return <article className={`gee-feature-card ${card.tone}`} key={card.title}><div className="gee-feature-icon"><Icon size={24} /></div><h3>{card.title}</h3><p>{card.description}</p><span className="gee-card-arrow">→</span></article>; })}</div></section>; }

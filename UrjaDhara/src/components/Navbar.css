@@ -34,6 +34,8 @@
 }
 .nav-links a:hover { color: #ffd54f; }
 .nav-links a:hover::after { width: 100%; }
+.nav-links a.active { color: #ffd54f; }
+.nav-links a.active::after { width: 100%; }
 .nav-actions { display: flex; align-items: center; gap: 10px; }
 .nav-icon-btn {
   background: rgba(255,255,255,0.15); border: none; border-radius: 50%;

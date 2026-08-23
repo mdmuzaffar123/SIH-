@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
+import GEEInsights from './pages/GEEInsights';
 import AdminDashboard from './pages/AdminDashboard';
 import Footer from './components/Footer';
 import ChatBot from './components/ChatBot';
@@ -23,6 +24,7 @@ function Layout() {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/gee-insights" element={<GEEInsights />} />
         <Route path="/admin/*" element={<AdminDashboard />} />
       </Routes>
       {!isAdmin && <Footer />}

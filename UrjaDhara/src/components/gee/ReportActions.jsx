@@ -1,0 +1,2 @@
+import { ClipboardList, Download, FileBarChart } from 'lucide-react';
+export default function ReportActions() { return <section className="gee-container gee-report-section"><div><div className="gee-section-kicker">READY TO SHARE</div><h2>Generate Planning Report</h2><p>Take location intelligence into the next planning conversation.</p></div><div className="gee-report-actions"><button><Download size={18} /> Download PDF</button><button><FileBarChart size={18} /> Export CSV</button><button><ClipboardList size={18} /> View Full Report</button></div></section>; }
