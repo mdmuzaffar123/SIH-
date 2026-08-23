@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useLang } from '../context/LanguageContext';
 import { Link } from 'react-router-dom';
 import SearchModal from '../components/SearchModal';
+import cardOneArtwork from '../../Image/Card 1.jpeg';
 import smartPlanningArtwork from '../../Image/5 card.png';
 import './Home.css';
 
@@ -25,7 +26,7 @@ const IMPACT_CARDS = [
     eyebrow: 'National Mission',
     title: 'Solar power for every rural classroom',
     text: 'Supporting India’s clean-energy vision with reliable electricity for schools and health centres.',
-    image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Narendra%20Modi%20official%20portrait.jpg',
+    image: cardOneArtwork,
     tone: 'gold',
   },
   {
