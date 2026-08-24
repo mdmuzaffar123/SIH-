@@ -9,3 +9,8 @@ def test_analysis(): assert 'nightLights' in client.get('/api/gee/analysis?locat
 def test_invalid_location(): assert client.get('/api/gee/analysis?location=Unknown').status_code==404
 def test_invalid_layer(): assert client.get('/api/gee/map?location=Raipur&layer=bad').status_code==422
 def test_compare(): assert client.post('/api/gee/compare',json={'locations':[{'district':'Raipur','state':'Chhattisgarh'}]}).status_code==200
+def test_compare_multiple_locations():
+	payload={'locations':[{'district':'Raipur','state':'Chhattisgarh'},{'district':'Bastar','state':'Chhattisgarh'},{'district':'Dantewada','state':'Chhattisgarh'}]}
+	response=client.post('/api/gee/compare',json=payload)
+	assert response.status_code==200
+	assert len(response.json()['comparison'])==3
